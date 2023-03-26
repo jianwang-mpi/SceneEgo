@@ -36,7 +36,7 @@ python demo.py --img data/input/img --depth data/input/depth --out data/output
 ```
 The result will be shown with the open3d visualizer and the predicted pose is saved at ```data/output```.
 
-3. The predicted pose is saved as the pkl file. To visualize the predicted result, run:
+3. The predicted pose is saved as the pkl file. To visualize the predicted result (e.g. predicted pose saved as ```1.pkl```), run:
 ```shell
 python visualize.py --img data/input/img/1.jpg --depth data/input/depth/1.jpg --out data/output/1.pkl
 ```
@@ -53,7 +53,6 @@ The result will be shown with the open3d visualizer.
 python test.py --data_path data/sceneego
 ```
 
-4. The pose accuracy will be shown in the shell.
 
 
 
