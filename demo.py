@@ -1,5 +1,8 @@
 import os
 from pprint import pprint
+import sys
+
+sys.path.append('sceneego')
 
 import torch
 from torch.utils.data import DataLoader
@@ -10,6 +13,8 @@ from network.voxel_net_depth import VoxelNetwork_depth
 from utils import cfg
 from utils.skeleton import Skeleton
 import argparse
+import pickle
+from visualize import visualize
 
 os.environ["OPENCV_IO_ENABLE_OPENEXR"] = "1"
 
@@ -18,7 +23,8 @@ class Demo:
     def __init__(self, config, img_dir, depth_dir):
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
         self.demo_dataset = DemoDataset(config, img_dir, depth_dir, voxel_output=False)
-        self.demo_dataloader = DataLoader(self.demo_dataset, batch_size=1, shuffle=False, drop_last=False, num_workers=0)
+        self.demo_dataloader = DataLoader(self.demo_dataset, batch_size=1, shuffle=False, drop_last=False,
+                                          num_workers=0)
 
         self.network = VoxelNetwork_depth(config)
 
@@ -76,21 +82,24 @@ def main():
     depth_dir = args.depth_dir
     output_dir = args.output_dir
 
-    import pickle
-
     config = cfg.load_config(config_path)
     demo = Demo(config, img_dir, depth_dir)
     result_list = demo.run(config)
 
+    for result_dict in result_list:
+        # save predicted joint list
+        img_path = result_dict['img_path']
+        img_name = os.path.split(img_path)[1]
+        pose_pred = result_dict['predicted_keypoints']
+        out_path = os.path.join(output_dir, f'{img_name}.pkl')
+        depth_path = os.path.join(depth_dir, f'{img_name}.exr')
 
-    # save predicted joint list
-    if not os.path.isdir(save_dir):
-        os.makedirs(save_dir)
-    save_path = os.path.join(save_dir, 'no_body_diogo1.pkl')
+        with open(out_path, 'wb') as f:
+            pickle.dump(pose_pred, f)
 
-    save_obj = predicted_joint_list
-    with open(save_path, 'wb') as f:
-        pickle.dump(save_obj, f)
+        # visualize the pose and depth map
+        visualize(img_path, depth_path, out_path)
+
 
 if __name__ == '__main__':
     main()

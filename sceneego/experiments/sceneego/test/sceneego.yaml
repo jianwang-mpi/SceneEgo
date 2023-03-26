@@ -8,7 +8,7 @@ heatmap_shape: [1024, 1280]
 
 test:
   batch_size: 8
-  model_path: "logs/sceneego/checkpoints/6.pth.tar"
+  model_path: "models/sceneego/checkpoints/6.pth.tar"
   depth_model_path: "network_models/wo_body_lr_1e-4_finetune_cleaned_data/iter_38000.pth.tar"
 
 opt:
