@@ -74,7 +74,7 @@ def main():
     parser.add_argument("--img_dir", type=str, required=False, default='data/demo/imgs')
     parser.add_argument("--depth_dir", type=str, required=False, default='data/demo/depths')
     parser.add_argument("--output_dir", type=str, required=False, default='data/demo/out')
-    parser.add_argument("--vis", type=bool, required=True, default=False)
+    parser.add_argument("--vis", type=bool, required=False, default=False)
 
     args = parser.parse_args()
 
