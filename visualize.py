@@ -1,6 +1,6 @@
 import argparse
-import sys
-sys.path.append('sceneego')
+import os
+os.environ["OPENCV_IO_ENABLE_OPENEXR"] = "1"
 from utils.skeleton import Skeleton
 import pickle
 import open3d
