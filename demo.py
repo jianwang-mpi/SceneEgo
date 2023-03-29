@@ -70,7 +70,7 @@ class Demo:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, required=False, default='sceneego/experiments/sceneego/test/sceneego.yaml')
+    parser.add_argument('--config', type=str, required=False, default='experiments/sceneego/test/sceneego.yaml')
     parser.add_argument("--img_dir", type=str, required=False, default='data/demo/imgs')
     parser.add_argument("--depth_dir", type=str, required=False, default='data/demo/depths')
     parser.add_argument("--output_dir", type=str, required=False, default='data/demo/out')
