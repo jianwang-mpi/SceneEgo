@@ -62,7 +62,7 @@ class DemoDataset(Dataset):
         return data_list
 
     def __len__(self):
-        return len(self.image_path_list)
+        return len(self.data_list)
 
     def __getitem__(self, index):
         img_path = self.data_list[index]['img_path']
