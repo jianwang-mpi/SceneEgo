@@ -1,8 +1,8 @@
 from scipy.io import loadmat
 import open3d
-from utils_proj.skeleton import Skeleton
+from utils.skeleton import Skeleton
 import numpy as np
-from utils_proj.calculate_errors import align_skeleton, calculate_error
+from utils.calculate_errors import align_skeleton, calculate_error
 import os
 from natsort import natsorted
 from tqdm import tqdm
