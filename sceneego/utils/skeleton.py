@@ -5,7 +5,7 @@ from utils.fisheye.FishEyeEquisolid import FishEyeCameraEquisolid
 from utils.fisheye.FishEyeCalibrated import FishEyeCameraCalibrated
 import numpy as np
 import open3d
-from utils_proj.pose_visualization_utils import get_cylinder, get_sphere
+from utils.pose_visualization_utils import get_cylinder, get_sphere
 from scipy.io import loadmat
 import cv2
 import os
