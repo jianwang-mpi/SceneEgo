@@ -1,8 +1,5 @@
 import os
 from pprint import pprint
-import sys
-
-sys.path.append('sceneego')
 import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm

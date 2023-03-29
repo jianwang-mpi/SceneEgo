@@ -17,24 +17,6 @@ from utils.fisheye.FishEyeCalibrated import FishEyeCameraCalibrated
 
 
 class TestDataset(Dataset):
-    path_dict = {
-        'jian1': {
-            'path': r'/HPS/ScanNet/work/egocentric_view/05082022/jian1',
-        },
-        'new_jian1': {
-            'path': r'/HPS/ScanNet/work/egocentric_view/25082022/jian1',
-        },
-        'new_jian2': {
-            'path': r'/HPS/ScanNet/work/egocentric_view/25082022/jian2',
-        },
-        'new_diogo1': {
-            'path': r'/HPS/ScanNet/work/egocentric_view/25082022/diogo1',
-        },
-        'new_diogo2': {
-            'path': r'/HPS/ScanNet/work/egocentric_view/25082022/diogo2',
-        },
-
-    }
 
     def calculated_ray_direction(self, image_width, image_height):
         points = np.zeros(shape=(image_width, image_height, 2))
@@ -46,10 +28,8 @@ class TestDataset(Dataset):
         ray = self.camera_model.camera2world_ray(points)
         return ray
 
-    def __init__(self, config, seq_name, estimated_depth_name=None, voxel_output=True,
-                 local_machine=False, img_mean=(0.485, 0.456, 0.406),
+    def __init__(self, config, root_dir, seq_name, estimated_depth_name=None, voxel_output=True, img_mean=(0.485, 0.456, 0.406),
                  img_std=(0.229, 0.224, 0.225), with_one_depth=False):
-        self.seq_name = seq_name
         self.voxel_output = voxel_output
         self.estimated_depth_name = estimated_depth_name
         self.with_one_depth = with_one_depth # only for visualization
@@ -57,7 +37,6 @@ class TestDataset(Dataset):
         self.normalize = Normalize(mean=img_mean, std=img_std)
         self.to_tensor = ToTensor()
 
-        self.local_machine = local_machine
         self.img_size = config.image_shape
 
         self.camera_model_path = config.dataset.camera_calibration_path
@@ -65,7 +44,7 @@ class TestDataset(Dataset):
 
         self.ray = self.calculated_ray_direction(config.dataset.image_width, config.dataset.image_height)
 
-        self.image_path_list, self.gt_pose_list, self.depth_map_list = self.get_gt_data(seq_name)
+        self.image_path_list, self.gt_pose_list, self.depth_map_list = self.get_gt_data(root_dir, seq_name)
 
         assert len(self.image_path_list) == len(self.gt_pose_list) and len(self.gt_pose_list) == len(
             self.depth_map_list)
@@ -73,11 +52,9 @@ class TestDataset(Dataset):
         self.cuboid_side = config.model.cuboid_side
         self.volume_size = config.model.volume_size
 
-    def get_gt_data(self, seq_name):
+    def get_gt_data(self, root_dir, seq_name):
         print("start loading test file")
-        base_path = self.path_dict[seq_name]['path']
-        if self.local_machine:
-            base_path = base_path.replace('/HPS', 'X:').replace('/CT', 'Z:')
+        base_path = os.path.join(root_dir, seq_name)
 
         img_data_path = os.path.join(base_path, 'imgs')
         gt_path = os.path.join(base_path, 'local_pose_gt.pkl')
@@ -145,10 +122,6 @@ class TestDataset(Dataset):
         else:
             depth_path = self.depth_map_list[index]
 
-        if self.local_machine:
-            img_path = img_path.replace('/HPS', 'X:').replace('/CT', 'Z:')
-            depth_path = depth_path.replace('/HPS', 'X:').replace('/CT', 'Z:')
-
         raw_img = cv2.imread(img_path)
         raw_img = raw_img[:, 128: -128, :]
         # data augmentation
@@ -178,7 +151,7 @@ class TestDataset(Dataset):
 
 def main():
     dataset = TestDataset(config=None, seq_name='new_jian1',
-                          voxel_output=False, local_machine=True)
+                          voxel_output=False)
 
     img_torch, img_rgb_torch, depth_scene_info, img_path = dataset[100]
 
