@@ -1,8 +1,4 @@
-from copy import deepcopy
 import numpy as np
-import pickle
-import random
-import time
 from copy import copy
 import cv2
 
@@ -12,7 +8,7 @@ import cv2
 import torch
 from torch import nn
 
-from utils import op, multiview, img, misc, volumetric
+from utils import op
 from torch.nn.functional import interpolate
 
 from network import pose_resnet
@@ -287,8 +283,6 @@ def run_voxel_net():
 
 
 def show_voxel_torch(voxel):
-    import matplotlib
-    from mpl_toolkits.mplot3d import Axes3D
     import matplotlib.pyplot as plt
     # show voxel result
     voxel_np = voxel.cpu().numpy()
@@ -342,7 +336,6 @@ def visualize_grid_coord_proj():
 
 
 def test_reproject_feature():
-    from visualization.visualization_3D_grid import visualize_3D_grid_single_grid
     from utils import cfg
     import cv2
     config_path = 'experiments/local/train/mo2cap2_vol_softmax.yaml'

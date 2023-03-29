@@ -1,8 +1,7 @@
 import argparse
 import sys
 sys.path.append('sceneego')
-import cv2
-from utils.skeleton import Skeleton
+from utils import Skeleton
 import pickle
 import open3d
 

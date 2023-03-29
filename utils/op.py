@@ -4,7 +4,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from utils.img import to_numpy, to_torch
 from utils import multiview
 
 
