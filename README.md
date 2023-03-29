@@ -1,7 +1,5 @@
 # SceneEgo
 
-### TODO: This repo is under construction...
-
 Official implementation of paper: 
 
 **Scene-aware Egocentric 3D Human Pose Estimation**
@@ -9,6 +7,8 @@ Official implementation of paper:
 *Jian Wang, Diogo Luvizon, Weipeng Xu, Lingjie Liu, Kripasindhu Sarkar, Christian Theobalt*
 
 *CVPR 2023*
+
+![Demo image](./resources/Wang_CVPR_2023.gif)
 
 ### Install
 
@@ -28,13 +28,13 @@ pip install -r requirements.txt
 ```
 ### Run the demo
 
-1. Download pre-trained pose estimation model from  under ```models```
+1. Download pre-trained pose estimation model from  under ```models/sceneego/checkpoints```
 
 2. run:
 ```shell
-python demo.py --img data/input/img --depth data/input/depth --out data/output
+python demo.py --config experiments/sceneego/test/sceneego.yaml --img_dir data/demo/imgs --depth_dir data/demo/depths --output_dir data/demo/out --vis True
 ```
-The result will be shown with the open3d visualizer and the predicted pose is saved at ```data/output```.
+The result will be shown with the open3d visualizer and the predicted pose is saved at ```data/demo/out```.
 
 3. The predicted pose is saved as the pkl file. To visualize the predicted result (e.g. predicted pose saved as ```1.pkl```), run:
 ```shell
@@ -44,7 +44,7 @@ The result will be shown with the open3d visualizer.
 
 ### Test on real-world dataset
 
-1. Download pre-trained pose estimation model from  to ```models```
+1. Download pre-trained pose estimation model from  under ```models/sceneego/checkpoints```
 
 2. Download the test dataset from to ```data/sceneego```
 
