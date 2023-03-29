@@ -1,8 +1,8 @@
 # pose visualizer
 # 1. read and generate 3D skeleton from heat map and depth
 # 2. convert 3D skeleton to skeleton mesh
-from utils_proj.fisheye.FishEyeEquisolid import FishEyeCameraEquisolid
-from utils_proj.fisheye.FishEyeCalibrated import FishEyeCameraCalibrated
+from utils.fisheye.FishEyeEquisolid import FishEyeCameraEquisolid
+from utils.fisheye.FishEyeCalibrated import FishEyeCameraCalibrated
 import numpy as np
 import open3d
 from utils_proj.pose_visualization_utils import get_cylinder, get_sphere
