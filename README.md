@@ -36,23 +36,29 @@ python demo.py --config experiments/sceneego/test/sceneego.yaml --img_dir data/d
 ```
 The result will be shown with the open3d visualizer and the predicted pose is saved at ```data/demo/out```.
 
-3. The predicted pose is saved as the pkl file. To visualize the predicted result (e.g. predicted pose saved as ```1.pkl```), run:
+3. The predicted pose is saved as the pkl file. To visualize the predicted result (e.g. predicted pose saved as ```img_001000.jpg.pkl```), run:
 ```shell
-python visualize.py --img data/input/img/1.jpg --depth data/input/depth/1.jpg --out data/output/1.pkl
+python visualize.py --img_path data/demo/imgs/img_001000.jpg --depth_path data/demo/depths/img_001000.jpg.exr --pose_path data/demo/out/img_001000.jpg.pkl
 ```
 The result will be shown with the open3d visualizer.
 
-### Test on real-world dataset
+[//]: # (### Test on real-world dataset)
 
-1. Download [pre-trained pose estimation model](https://nextcloud.mpi-klsb.mpg.de/index.php/s/DGB6XKEPwwQbmTi) and put it under ```models/sceneego/checkpoints```
+[//]: # ()
+[//]: # (1. Download [pre-trained pose estimation model]&#40;https://nextcloud.mpi-klsb.mpg.de/index.php/s/DGB6XKEPwwQbmTi&#41; and put it under ```models/sceneego/checkpoints```)
 
+[//]: # ()
+[//]: # ()
+[//]: # (2. Download the test dataset from to ```data/sceneego```)
 
-2. Download the test dataset from to ```data/sceneego```
+[//]: # ()
+[//]: # (3. run:)
 
-3. run:
-```shell
-python test.py --data_path data/sceneego
-```
+[//]: # (```shell)
+
+[//]: # (python test.py --data_path data/sceneego)
+
+[//]: # (```)
 
 
 
