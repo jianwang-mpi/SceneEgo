@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ```
 ### Run the demo
 
-1. Download pre-trained pose estimation model from  under ```models/sceneego/checkpoints```
+1. Download [pre-trained pose estimation model](https://nextcloud.mpi-klsb.mpg.de/index.php/s/DGB6XKEPwwQbmTi) and put it under ```models/sceneego/checkpoints```
 
 2. run:
 ```shell
@@ -44,7 +44,8 @@ The result will be shown with the open3d visualizer.
 
 ### Test on real-world dataset
 
-1. Download pre-trained pose estimation model from  under ```models/sceneego/checkpoints```
+1. Download [pre-trained pose estimation model](https://nextcloud.mpi-klsb.mpg.de/index.php/s/DGB6XKEPwwQbmTi) and put it under ```models/sceneego/checkpoints```
+
 
 2. Download the test dataset from to ```data/sceneego```
 
