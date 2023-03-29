@@ -36,7 +36,7 @@ python demo.py --config experiments/sceneego/test/sceneego.yaml --img_dir data/d
 ```
 The result will be shown with the open3d visualizer and the predicted pose is saved at ```data/demo/out```.
 
-3. The predicted pose is saved as the pkl file. To visualize the predicted result (e.g. predicted pose saved as ```img_001000.jpg.pkl```), run:
+3. The predicted pose is saved as the pkl file (e.g. ```img_001000.jpg.pkl```). To visualize the predicted result, run:
 ```shell
 python visualize.py --img_path data/demo/imgs/img_001000.jpg --depth_path data/demo/depths/img_001000.jpg.exr --pose_path data/demo/out/img_001000.jpg.pkl
 ```
