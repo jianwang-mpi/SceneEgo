@@ -9,7 +9,7 @@ from utils.depth2pointcloud import Depth2PointCloud
 
 
 def visualize(img_path, depth_path, pred_pose_path):
-    skeleton = Skeleton(calibration_path=None)
+    skeleton = Skeleton(calibration_path='utils/fisheye/fisheye.calibration_05_08.json')
 
     with open(pred_pose_path, 'rb') as f:
         predicted_pose = pickle.load(f)
