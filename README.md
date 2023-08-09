@@ -8,7 +8,7 @@ Official implementation of paper:
 
 *CVPR 2023*
 
-[Project Page](https://people.mpi-inf.mpg.de/~jianwang/projects/sceneego/index.htm)  [Datasets](https://nextcloud.mpi-klsb.mpg.de/index.php/s/Ritzm3ycioAADSH)
+[[Project Page](https://people.mpi-inf.mpg.de/~jianwang/projects/sceneego/index.htm)]  [[Datasets](https://nextcloud.mpi-klsb.mpg.de/index.php/s/Ritzm3ycioAADSH)]
 
 ![Demo image](./resources/Wang_CVPR_2023.gif)
 
