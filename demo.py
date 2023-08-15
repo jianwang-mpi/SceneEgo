@@ -71,7 +71,7 @@ def main():
     parser.add_argument("--img_dir", type=str, required=False, default='data/demo/imgs')
     parser.add_argument("--depth_dir", type=str, required=False, default='data/demo/depths')
     parser.add_argument("--output_dir", type=str, required=False, default='data/demo/out')
-    parser.add_argument("--vis", type=bool, required=False, default=False)
+    parser.add_argument("--vis", type=str, required=False, default='false')
 
     args = parser.parse_args()
 
@@ -97,7 +97,7 @@ def main():
             pickle.dump(pose_pred, f)
 
         # visualize the pose and depth map
-        if vis:
+        if vis.lower() == 'true':
             visualize(img_path, depth_path, out_path)
 
 

@@ -39,11 +39,15 @@ class VoxelNetwork_depth(nn.Module):
         # # transfer
         # self.transfer_cmu_to_human36m = config.model.transfer_cmu_to_human36m if hasattr(config.model, "transfer_cmu_to_human36m") else False
 
-        network_path = config.model.backbone.checkpoint
-        network_loads = torch.load(network_path)
+        load_checkpoint = config.model.backbone.local_checkpoint
+        if load_checkpoint:
+            network_path = config.model.backbone.checkpoint
+            network_loads = torch.load(network_path)
 
-        self.backbone = pose_resnet.get_pose_net(state_dict=network_loads['state_dict'])
-        print("warning!!! Use default backbone resnet")
+            self.backbone = pose_resnet.get_pose_net(state_dict=network_loads['state_dict'])
+        else:
+            print('Do not load checkpoint')
+            self.backbone = pose_resnet.get_pose_net(None)
         self.backbone = self.backbone.to(device)
 
         if config.opt.train_2d is False:

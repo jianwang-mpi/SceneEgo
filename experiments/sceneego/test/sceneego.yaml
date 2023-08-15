@@ -60,6 +60,7 @@ model:
     style: "simple"
 
     init_weights: true
+    local_checkpoint: false
     checkpoint: "/HPS/Mo2Cap2Plus1/work/Mo2Cap2Finetune/logs/finetune2D_spin_without_da_iter_0_new/checkpoints/6.pth.tar"
 #    checkpoint: "X:/Mo2Cap2Plus1/work/Mo2Cap2Finetune/logs/finetune2D_spin_without_da_iter_0_new/checkpoints/6.pth.tar"
 
