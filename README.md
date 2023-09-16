@@ -49,11 +49,11 @@ If you want to test on your own dataset, you need to:
 
 1. Run the egocentric human body segmentation network:
    
-   See repo:
+   See repo: [Egocentric Human Body Segmentation](https://github.com/yt4766269/EgocentricHumanBodySeg)
    
 3. Run the depth estimator
-   
-  See repo: [Egocentric Depth Estimator](https://github.com/yt4766269/EgocentricDepthEstimator)
+
+   See repo: [Egocentric Depth Estimator](https://github.com/yt4766269/EgocentricDepthEstimator)
 
 
 ### Citation
