@@ -44,11 +44,13 @@ python visualize.py --img_path data/demo/imgs/img_001000.jpg --depth_path data/d
 ```
 The result will be shown with the open3d visualizer.
 
-###Test on your own dataset
-1. Run the egocentric human body segmentation network:
-   See repo: 
+### Test on your own dataset
 If you want to test on your own dataset, you need to:
-2. Run the depth estimator
+
+1. Run the egocentric human body segmentation network:
+   See repo:
+   
+3. Run the depth estimator
   See repo: [Egocentric Depth Estimator](https://github.com/yt4766269/EgocentricDepthEstimator)
 
 [//]: # (### Test on real-world dataset)
