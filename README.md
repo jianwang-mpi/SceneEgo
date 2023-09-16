@@ -44,6 +44,11 @@ python visualize.py --img_path data/demo/imgs/img_001000.jpg --depth_path data/d
 ```
 The result will be shown with the open3d visualizer.
 
+
+### Run the depth estimator
+
+See repo: [Egocentric Depth Estimator](https://github.com/yt4766269/EgocentricDepthEstimator)
+
 [//]: # (### Test on real-world dataset)
 
 [//]: # ()
