@@ -55,6 +55,20 @@ If you want to test on your own dataset, you need to:
    
   See repo: [Egocentric Depth Estimator](https://github.com/yt4766269/EgocentricDepthEstimator)
 
+
+### Citation
+
+If you find this work or code is helpful in your research, please cite:
+````
+@inproceedings{wang2023scene,
+  title={Scene-aware Egocentric 3D Human Pose Estimation},
+  author={Wang, Jian and Luvizon, Diogo and Xu, Weipeng and Liu, Lingjie and Sarkar, Kripasindhu and Theobalt, Christian},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={13031--13040},
+  year={2023}
+}
+````
+
 [//]: # (### Test on real-world dataset)
 
 [//]: # ()
