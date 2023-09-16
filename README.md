@@ -45,13 +45,13 @@ python visualize.py --img_path data/demo/imgs/img_001000.jpg --depth_path data/d
 The result will be shown with the open3d visualizer.
 
 ### Test on your own dataset
-If you want to test on your own dataset, you need to:
+If you want to test on your own dataset, after obtaining egocentric frames, you need to:
 
-1. Run the egocentric human body segmentation network:
+1. Run the egocentric human body segmentation network to get the human body segmentation for each frame:
    
    See repo: [Egocentric Human Body Segmentation](https://github.com/yt4766269/EgocentricHumanBodySeg)
    
-3. Run the depth estimator
+3. Run the depth estimator to get the scene depth map for each frame:
 
    See repo: [Egocentric Depth Estimator](https://github.com/yt4766269/EgocentricDepthEstimator)
 
