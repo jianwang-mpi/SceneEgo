@@ -48,9 +48,11 @@ The result will be shown with the open3d visualizer.
 If you want to test on your own dataset, you need to:
 
 1. Run the egocentric human body segmentation network:
+   
    See repo:
    
 3. Run the depth estimator
+   
   See repo: [Egocentric Depth Estimator](https://github.com/yt4766269/EgocentricDepthEstimator)
 
 [//]: # (### Test on real-world dataset)
