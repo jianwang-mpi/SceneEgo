@@ -22,13 +22,24 @@ with open('annotation.pkl', 'rb') as f:
 print(data[0].keys())
 ```
 The data is a Python list, each item is a Python dict containing the annotations:
-- ext_id: the annotation id of external multiview mocap system;
+- ext_id: the annotation id of external multiview mocap system; 
 - calib_board_pose: the 6d pose of the calibration board on the head;
 - ego_pose_gt: the ground truth human body pose under the egocentric camera coordinate system, the joint sequence is: Neck, Right Shoulder, Right Elbow, Right Wrist, Left Shoulder, Left Elbow, Left Wrist, Right Hip, Right Knee, Right Ankle, Right Toe, Left Hip, Left Knee, Left Ankle, Left Toe;
 - ext_pose_gt: the human pose ground truth in the mocap system coordinate;
 - image_name: name of image under directory "imgs";
 - ego_camera_matrix: the 6d pose of the egocentric camera on the head.
 
+The id of the egocentric camera can also be obtained with the synchronization file with:
+```python
+
+with open('syn.json', 'r') as f:
+    syn_data = json.load(f)
+
+ego_start_frame = syn_data['ego']
+ext_start_frame = syn_data['ext']
+ego_id = ext_id - ext_start_frame + ego_start_frame
+egocentric_image_name = "img_%06d.jpg" % ego_id
+```
 
 ### Install
 
