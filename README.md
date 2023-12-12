@@ -12,6 +12,24 @@ Official implementation of paper:
 
 ![Demo image](./resources/Wang_CVPR_2023.gif)
 
+### Annotation format in Test dataset
+
+The annotation of the dataset is saved in "annotation.pkl" of each sequence. Load the pickle file with:
+
+```python
+with open('annotation.pkl', 'rb') as f:
+    data = pickle.load(f)
+print(data[0].keys())
+```
+The data is a Python list, each item is a Python dict containing the annotations:
+- ext_id: the annotation id of external multiview mocap system;
+- calib_board_pose: the 6d pose of the calibration board on the head;
+- ego_pose_gt: the ground truth human body pose under the egocentric camera coordinate system, the joint sequence is: Neck, Right Shoulder, Right Elbow, Right Wrist, Left Shoulder, Left Elbow, Left Wrist, Right Hip, Right Knee, Right Ankle, Right Toe, Left Hip, Left Knee, Left Ankle, Left Toe;
+- ext_pose_gt: the human pose ground truth in the mocap system coordinate;
+- image_name: name of image under directory "imgs";
+- ego_camera_matrix: the 6d pose of the egocentric camera on the head.
+
+
 ### Install
 
 1. Create a new anaconda environment
