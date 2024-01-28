@@ -8,7 +8,7 @@ Official implementation of paper:
 
 *CVPR 2023*
 
-[[Project Page](https://people.mpi-inf.mpg.de/~jianwang/projects/sceneego/)]  [[Datasets (Test split)](https://nextcloud.mpi-klsb.mpg.de/index.php/s/q27gwN8tWLMEfrY)] [[Datasets (Train split)](https://nextcloud.mpi-klsb.mpg.de/index.php/s/BsjsMJHBdCxfGt6)]
+[[Project Page](https://people.mpi-inf.mpg.de/~jianwang/projects/sceneego/)]  [[SceneEgo Datasets (Test split)](https://nextcloud.mpi-klsb.mpg.de/index.php/s/q27gwN8tWLMEfrY)] [[SceneEgo Datasets (Train split)](https://nextcloud.mpi-klsb.mpg.de/index.php/s/BsjsMJHBdCxfGt6)] [[EgoGTA](https://nextcloud.mpi-klsb.mpg.de/index.php/s/scxN3mQBtF8xw7A)] [[EgoPW-Scene](https://nextcloud.mpi-klsb.mpg.de/index.php/s/qe7Zwk7CyFEXWNk)]
 
 ![Demo image](./resources/Wang_CVPR_2023.gif)
 
