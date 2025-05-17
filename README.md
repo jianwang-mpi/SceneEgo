@@ -12,7 +12,7 @@ Official implementation of paper:
 
 <!-- [[SceneEgo Datasets (Test split)](https://nextcloud.mpi-klsb.mpg.de/index.php/s/q27gwN8tWLMEfrY)] [[SceneEgo Datasets (Train split)](https://nextcloud.mpi-klsb.mpg.de/index.php/s/BsjsMJHBdCxfGt6)] -->
 
-[[EgoGTA](https://nextcloud.mpi-klsb.mpg.de/index.php/s/scxN3mQBtF8xw7A)] [[EgoPW-Scene](https://nextcloud.mpi-klsb.mpg.de/index.php/s/qe7Zwk7CyFEXWNk)]
+[[EgoGTA](https://edmond.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.MYZMVZ)] [[EgoPW-Scene](https://edmond.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.EAFCFH)]
 
 ![Demo image](./resources/Wang_CVPR_2023.gif)
 
